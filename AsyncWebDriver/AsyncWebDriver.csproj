@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard2.0;net462</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;net472</TargetFrameworks>
     <Version>1.4.3</Version>
     <PackageReleaseNotes>Now IWebDriver and IWebElement interfaces are inherited from ISearchContext, IJavaScriptExecutor, IFindsById, IFindsByClassName...</PackageReleaseNotes>
     <Description>Async WebDriver is base for different WebBrowser drivers</Description>
