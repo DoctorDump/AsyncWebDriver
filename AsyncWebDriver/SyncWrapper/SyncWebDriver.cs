@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Threading;
 using Zu.WebBrowser.BasicTypes;
 using System.Collections;
+using System.Runtime.ExceptionServices;
 
 namespace Zu.AsyncWebDriver.Remote
 {
@@ -50,7 +51,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public string Context
@@ -81,7 +82,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -107,7 +108,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void SetContextContent()
@@ -132,7 +133,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public string CurrentWindowHandle
@@ -163,7 +164,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -192,7 +193,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -220,7 +221,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -323,7 +324,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void ClearElement(string elementId)
@@ -348,7 +349,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public SyncWebElement FindElement(By by)
@@ -376,7 +377,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -405,7 +406,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -434,7 +435,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -463,7 +464,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -492,7 +493,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -521,7 +522,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -550,7 +551,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -579,7 +580,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -608,7 +609,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -637,7 +638,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -666,7 +667,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -695,7 +696,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -724,7 +725,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -753,7 +754,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -782,7 +783,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -811,7 +812,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -840,7 +841,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -869,7 +870,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -898,7 +899,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -927,7 +928,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -956,7 +957,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -985,7 +986,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1013,7 +1014,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1041,7 +1042,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1069,7 +1070,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1097,7 +1098,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1125,7 +1126,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1153,7 +1154,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1181,7 +1182,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1209,7 +1210,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1237,7 +1238,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1265,7 +1266,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1293,7 +1294,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1321,7 +1322,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1349,7 +1350,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1381,7 +1382,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1408,7 +1409,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1435,7 +1436,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1466,7 +1467,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1492,7 +1493,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public SyncRemoteTargetLocator SwitchTo() => new SyncRemoteTargetLocator(AsyncDriver.SwitchTo());
@@ -1519,7 +1520,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1546,7 +1547,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1599,7 +1600,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -1625,7 +1626,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void ResetInputState()
@@ -1650,7 +1651,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
     }
 }

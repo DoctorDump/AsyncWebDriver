@@ -1,6 +1,7 @@
 // Copyright (c) Oleg Zudov. All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 using System;
 using System.Collections.ObjectModel;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Zu.WebBrowser.BasicTypes;
@@ -37,7 +38,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public ReadOnlyCollection<Cookie> AllCookies()
@@ -63,7 +64,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -89,7 +90,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void DeleteCookie(Cookie cookie)
@@ -114,7 +115,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void DeleteCookieNamed(string name)
@@ -139,7 +140,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public Cookie GetCookieNamed(string name)
@@ -165,7 +166,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
     }

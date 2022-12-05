@@ -1,5 +1,6 @@
 // Copyright (c) Oleg Zudov. All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 using System;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Zu.WebBrowser.AsyncInteractions;
@@ -37,7 +38,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void ContextClick(ICoordinates where)
@@ -62,7 +63,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void DoubleClick(ICoordinates where)
@@ -87,7 +88,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void MouseDown(ICoordinates where)
@@ -112,7 +113,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void MouseMove(ICoordinates where)
@@ -137,7 +138,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void MouseUp(ICoordinates where)
@@ -162,7 +163,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void Click(WebPoint where)
@@ -187,7 +188,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void ContextClick(WebPoint where)
@@ -212,7 +213,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void DoubleClick(WebPoint where)
@@ -237,7 +238,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void MouseDown(WebPoint where)
@@ -262,7 +263,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void MouseMove(WebPoint where)
@@ -287,7 +288,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void MouseUp(WebPoint where)
@@ -312,7 +313,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
     }
 }

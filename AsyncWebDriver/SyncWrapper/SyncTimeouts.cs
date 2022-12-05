@@ -1,5 +1,6 @@
 // Copyright (c) Oleg Zudov. All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 using System;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using Zu.WebBrowser.BrowserOptions;
@@ -37,7 +38,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -64,7 +65,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -91,7 +92,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
             return res;
         }
 
@@ -117,7 +118,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void SetImplicitWait(TimeSpan implicitWait)
@@ -142,7 +143,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
 
         public void SetPageLoad(TimeSpan time)
@@ -167,7 +168,7 @@ namespace Zu.AsyncWebDriver.Remote
             );
             MRes.Wait();
             if (exception != null)
-                throw exception;
+                ExceptionDispatchInfo.Capture(exception).Throw();
         }
     }
 }
