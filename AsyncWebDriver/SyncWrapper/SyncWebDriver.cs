@@ -22,7 +22,7 @@ namespace Zu.AsyncWebDriver.Remote
 
         public string Context => GetContext();
 
-        public string GetContext() => AsyncDriver.GetContext().Result;
+        public string GetContext() => AsyncDriver.GetContext().GetAwaiter().GetResult();
 
         public void SetContextChrome() => AsyncDriver.SetContextChrome().Wait();
 
@@ -30,18 +30,18 @@ namespace Zu.AsyncWebDriver.Remote
 
         public string CurrentWindowHandle => GetCurrentWindowHandle();
 
-        public string GetCurrentWindowHandle() => AsyncDriver.CurrentWindowHandle().Result;
+        public string GetCurrentWindowHandle() => AsyncDriver.CurrentWindowHandle().GetAwaiter().GetResult();
 
         public void Dispose() => AsyncDriver.Dispose();
 
         public object ExecuteAsyncScript(string script, params object[] args)
         {
-            return ReplaceWebElements(AsyncDriver.ExecuteAsyncScript(script, default, ReplaceWebElementsInArgs(args)).Result);
+            return ReplaceWebElements(AsyncDriver.ExecuteAsyncScript(script, default, ReplaceWebElementsInArgs(args)).GetAwaiter().GetResult());
         }
 
         public object ExecuteScript(string script, params object[] args)
         {
-            return ReplaceWebElements(AsyncDriver.ExecuteScript(script, default, ReplaceWebElementsInArgs(args)).Result);
+            return ReplaceWebElements(AsyncDriver.ExecuteScript(script, default, ReplaceWebElementsInArgs(args)).GetAwaiter().GetResult());
         }
 
         private object[] ReplaceWebElementsInArgs(object[] args)
@@ -89,212 +89,212 @@ namespace Zu.AsyncWebDriver.Remote
 
         public SyncWebElement FindElement(By by)
         {
-            return AsyncDriver.FindElement(by).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElement(by).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementOrDefault(By by)
         {
-            return AsyncDriver.FindElementOrDefault(by).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementOrDefault(by).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByClassName(string className)
         {
-            return AsyncDriver.FindElementByClassName(className).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByClassName(className).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByClassNameOrDefault(string className)
         {
-            return AsyncDriver.FindElementByClassNameOrDefault(className).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByClassNameOrDefault(className).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByCssSelector(string cssSelector)
         {
-            return AsyncDriver.FindElementByCssSelector(cssSelector).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByCssSelector(cssSelector).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByCssSelectorOrDefault(string cssSelector)
         {
-            return AsyncDriver.FindElementByCssSelectorOrDefault(cssSelector).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByCssSelectorOrDefault(cssSelector).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementById(string id)
         {
-            return AsyncDriver.FindElementById(id).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementById(id).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByIdOrDefault(string id)
         {
-            return AsyncDriver.FindElementByIdOrDefault(id).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByIdOrDefault(id).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByIdStartsWith(string id)
         {
-            return AsyncDriver.FindElementByIdStartsWith(id).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByIdStartsWith(id).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByIdStartsWithOrDefault(string id)
         {
-            return AsyncDriver.FindElementByIdStartsWithOrDefault(id).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByIdStartsWithOrDefault(id).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByIdEndsWith(string id)
         {
-            return AsyncDriver.FindElementByIdEndsWith(id).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByIdEndsWith(id).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByIdEndsWithOrDefault(string id)
         {
-            return AsyncDriver.FindElementByIdEndsWithOrDefault(id).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByIdEndsWithOrDefault(id).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByLinkText(string linkText)
         {
-            return AsyncDriver.FindElementByLinkText(linkText).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByLinkText(linkText).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByLinkTextOrDefault(string linkText)
         {
-            return AsyncDriver.FindElementByLinkTextOrDefault(linkText).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByLinkTextOrDefault(linkText).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByName(string name)
         {
-            return AsyncDriver.FindElementByName(name).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByName(name).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByNameOrDefault(string name)
         {
-            return AsyncDriver.FindElementByNameOrDefault(name).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByNameOrDefault(name).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByPartialLinkText(string partialLinkText)
         {
-            return AsyncDriver.FindElementByPartialLinkText(partialLinkText).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByPartialLinkText(partialLinkText).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByPartialLinkTextOrDefault(string partialLinkText)
         {
-            return AsyncDriver.FindElementByPartialLinkTextOrDefault(partialLinkText).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByPartialLinkTextOrDefault(partialLinkText).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByTagName(string tagName)
         {
-            return AsyncDriver.FindElementByTagName(tagName).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByTagName(tagName).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByTagNameOrDefault(string tagName)
         {
-            return AsyncDriver.FindElementByTagNameOrDefault(tagName).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByTagNameOrDefault(tagName).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByXPath(string xpath)
         {
-            return AsyncDriver.FindElementByXPath(xpath).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByXPath(xpath).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public SyncWebElement FindElementByXPathOrDefault(string xpath)
         {
-            return AsyncDriver.FindElementByXPathOrDefault(xpath).Result is AsyncWebElement element ? new SyncWebElement(element) : null;
+            return AsyncDriver.FindElementByXPathOrDefault(xpath).GetAwaiter().GetResult() is AsyncWebElement element ? new SyncWebElement(element) : null;
         }
 
         public List<SyncWebElement> FindElements(By by)
         {
-            var r = AsyncDriver.FindElements(by).Result;
+            var r = AsyncDriver.FindElements(by).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement((AsyncWebElement)v)).ToList();
         }
 
         public List<SyncWebElement> Children()
         {
-            var r = AsyncDriver.Children().Result;
+            var r = AsyncDriver.Children().GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByClassName(string className)
         {
-            var r = AsyncDriver.FindElementsByClassName(className).Result;
+            var r = AsyncDriver.FindElementsByClassName(className).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByCssSelector(string cssSelector)
         {
-            var r = AsyncDriver.FindElementsByCssSelector(cssSelector).Result;
+            var r = AsyncDriver.FindElementsByCssSelector(cssSelector).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsById(string id)
         {
-            var r = AsyncDriver.FindElementsById(id).Result;
+            var r = AsyncDriver.FindElementsById(id).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByIdOrDefault(string id)
         {
-            var r = AsyncDriver.FindElementsById(id).Result;
+            var r = AsyncDriver.FindElementsById(id).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByIdStartsWith(string id)
         {
-            var r = AsyncDriver.FindElementsByIdStartsWith(id).Result;
+            var r = AsyncDriver.FindElementsByIdStartsWith(id).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByIdEndsWith(string id)
         {
-            var r = AsyncDriver.FindElementsByIdEndsWith(id).Result;
+            var r = AsyncDriver.FindElementsByIdEndsWith(id).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByLinkText(string linkText)
         {
-            var r = AsyncDriver.FindElementsByLinkText(linkText).Result;
+            var r = AsyncDriver.FindElementsByLinkText(linkText).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByName(string name)
         {
-            var r = AsyncDriver.FindElementsByName(name).Result;
+            var r = AsyncDriver.FindElementsByName(name).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByPartialLinkText(string partialLinkText)
         {
-            var r = AsyncDriver.FindElementsByPartialLinkText(partialLinkText).Result;
+            var r = AsyncDriver.FindElementsByPartialLinkText(partialLinkText).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByTagName(string tagName)
         {
-            var r = AsyncDriver.FindElementsByTagName(tagName).Result;
+            var r = AsyncDriver.FindElementsByTagName(tagName).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public List<SyncWebElement> FindElementsByXPath(string xpath)
         {
-            var r = AsyncDriver.FindElementsByXPath(xpath).Result;
+            var r = AsyncDriver.FindElementsByXPath(xpath).GetAwaiter().GetResult();
             return r?.Where(a => a is AsyncWebElement).Select(v => new SyncWebElement(v as AsyncWebElement)).ToList();
         }
 
         public string Url => GetUrl();
 
-        public string GetUrl() => AsyncDriver.GetUrl().Result;
+        public string GetUrl() => AsyncDriver.GetUrl().GetAwaiter().GetResult();
 
-        public Screenshot GetScreenshot() => AsyncDriver.GetScreenshot().Result;
+        public Screenshot GetScreenshot() => AsyncDriver.GetScreenshot().GetAwaiter().GetResult();
 
-        public string GoToUrl(string url) => AsyncDriver.GoToUrl(url).Result;
+        public string GoToUrl(string url) => AsyncDriver.GoToUrl(url).GetAwaiter().GetResult();
 
         public SyncOptions Options() => new SyncOptions(AsyncDriver.Options());
         public SyncNavigation Navigate() => new SyncNavigation(AsyncDriver.Navigate());
         public SyncKeyboard Keyboard => new SyncKeyboard(AsyncDriver.Keyboard);
         public SyncMouse Mouse => new SyncMouse(AsyncDriver.Mouse);
-        public string PageSource() => AsyncDriver.PageSource().Result;
+        public string PageSource() => AsyncDriver.PageSource().GetAwaiter().GetResult();
 
         public void Quit() => AsyncDriver.Quit().Wait();
 
         public SyncRemoteTargetLocator SwitchTo() => new SyncRemoteTargetLocator(AsyncDriver.SwitchTo());
-        public string Title() => AsyncDriver.Title().Result;
+        public string Title() => AsyncDriver.Title().GetAwaiter().GetResult();
 
-        public List<string> WindowHandles() => AsyncDriver.WindowHandles().Result;
+        public List<string> WindowHandles() => AsyncDriver.WindowHandles().GetAwaiter().GetResult();
 
         //public bool WaitForElementWithId(string id, string notWebElementId = null, int attemptsCount = 20, int delayMs = 500)
         //{
@@ -322,7 +322,7 @@ namespace Zu.AsyncWebDriver.Remote
         //    }
         //    return false;
         //}
-        public bool IsActionExecutor() => AsyncDriver.IsActionExecutor().Result;
+        public bool IsActionExecutor() => AsyncDriver.IsActionExecutor().GetAwaiter().GetResult();
 
         public void PerformActions(IList<ActionSequence> actionSequenceList) => AsyncDriver.PerformActions(actionSequenceList).Wait();
 
