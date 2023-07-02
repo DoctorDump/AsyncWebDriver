@@ -59,7 +59,7 @@ namespace Zu.AsyncWebDriver.Remote
                     return dic
                         .Cast<DictionaryEntry>()
                         .ToDictionary(item => item.Key.ToString(), item => ReplaceWebElementsInArg(item.Value));
-                case IEnumerable col:
+                case IEnumerable col when !(col is string):
                     return col.Cast<object>().Select(ReplaceWebElementsInArg).ToList();
                 default:
                     return obj;
@@ -76,7 +76,7 @@ namespace Zu.AsyncWebDriver.Remote
                     return dic
                         .Cast<DictionaryEntry>()
                         .ToDictionary(item => item.Key.ToString(), item => ReplaceWebElements(item.Value));
-                case IEnumerable col:
+                case IEnumerable col when !(col is string):
                     return new ReadOnlyCollection<object>(col.Cast<object>().Select(ReplaceWebElements).ToList());
                 default:
                     return obj;
