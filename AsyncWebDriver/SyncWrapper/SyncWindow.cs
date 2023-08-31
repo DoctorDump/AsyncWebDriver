@@ -6,11 +6,11 @@ namespace Zu.AsyncWebDriver.Remote
 {
     public class SyncWindow
     {
-        private IWindow window;
+        private IWindow _window;
 
         public SyncWindow(IWindow window)
         {
-            this.window = window;
+            _window = window;
         }
     }
 }

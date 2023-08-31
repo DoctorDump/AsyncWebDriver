@@ -7,11 +7,11 @@ namespace Zu.AsyncWebDriver.Remote
 {
     public class SyncAlert
     {
-        private IAlert alert;
+        private IAlert _alert;
 
         public SyncAlert(IAlert alert)
         {
-            this.alert = alert;
+            _alert = alert;
         }
     }
 }

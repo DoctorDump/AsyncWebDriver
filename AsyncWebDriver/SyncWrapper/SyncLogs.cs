@@ -6,11 +6,11 @@ namespace Zu.AsyncWebDriver.Remote
 {
     public class SyncLogs
     {
-        private ILogs logs;
+        private ILogs _logs;
 
         public SyncLogs(ILogs logs)
         {
-            this.logs = logs;
+            _logs = logs;
         }
     }
 }

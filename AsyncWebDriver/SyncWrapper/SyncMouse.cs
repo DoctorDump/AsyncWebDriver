@@ -1,8 +1,5 @@
 // Copyright (c) Oleg Zudov. All Rights Reserved. Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
-using System;
-using System.Runtime.ExceptionServices;
-using System.Threading;
-using System.Threading.Tasks;
+
 using Zu.WebBrowser.AsyncInteractions;
 using Zu.WebBrowser.BasicTypes;
 
@@ -10,310 +7,34 @@ namespace Zu.AsyncWebDriver.Remote
 {
     public class SyncMouse
     {
-        private IMouse mouse;
+        private readonly IMouse _mouse;
         public SyncMouse(IMouse mouse)
         {
-            this.mouse = mouse;
+            _mouse = mouse;
         }
 
-        public void Click(ICoordinates where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.Click(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
+        public void Click(ICoordinates where) => _mouse.Click(where).Wait();
 
-                MRes.Set();
-            }
+        public void ContextClick(ICoordinates where) => _mouse.ContextClick(where).Wait();
 
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
+        public void DoubleClick(ICoordinates where) => _mouse.DoubleClick(where).Wait();
 
-        public void ContextClick(ICoordinates where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.ContextClick(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
+        public void MouseDown(ICoordinates where) => _mouse.MouseDown(where).Wait();
 
-                MRes.Set();
-            }
+        public void MouseMove(ICoordinates where) => _mouse.MouseMove(where).Wait();
 
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
+        public void MouseUp(ICoordinates where) => _mouse.MouseUp(where).Wait();
 
-        public void DoubleClick(ICoordinates where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.DoubleClick(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
+        public void Click(WebPoint where) => _mouse.Click(where).Wait();
 
-                MRes.Set();
-            }
+        public void ContextClick(WebPoint where) => _mouse.ContextClick(where).Wait();
 
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
+        public void DoubleClick(WebPoint where) => _mouse.DoubleClick(where).Wait();
 
-        public void MouseDown(ICoordinates where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.MouseDown(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
+        public void MouseDown(WebPoint where) => _mouse.MouseDown(where).Wait();
 
-                MRes.Set();
-            }
+        public void MouseMove(WebPoint where) => _mouse.MouseMove(where).Wait();
 
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void MouseMove(ICoordinates where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.MouseMove(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void MouseUp(ICoordinates where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.MouseUp(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void Click(WebPoint where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.Click(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void ContextClick(WebPoint where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.ContextClick(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void DoubleClick(WebPoint where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.DoubleClick(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void MouseDown(WebPoint where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.MouseDown(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void MouseMove(WebPoint where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.MouseMove(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
-
-        public void MouseUp(WebPoint where)
-        {
-            var MRes = new ManualResetEventSlim(true);
-            MRes.Reset();
-            Exception exception = null;
-            Task.Run(async () =>
-            {
-                try
-                {
-                    await mouse.MouseUp(where).ConfigureAwait(false);
-                }
-                catch (Exception ex)
-                {
-                    exception = ex;
-                }
-
-                MRes.Set();
-            }
-
-            );
-            MRes.Wait();
-            if (exception != null)
-                ExceptionDispatchInfo.Capture(exception).Throw();
-        }
+        public void MouseUp(WebPoint where) => _mouse.MouseUp(where).Wait();
     }
 }

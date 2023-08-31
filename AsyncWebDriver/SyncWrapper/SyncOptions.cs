@@ -6,17 +6,17 @@ namespace Zu.AsyncWebDriver.Remote
 {
     public class SyncOptions
     {
-        private IOptions options;
+        private readonly IOptions _options;
 
         public SyncOptions(IOptions options)
         {
-            this.options = options;
+            _options = options;
         }
 
-        public SyncCookieJar Cookies => new SyncCookieJar(options.Cookies);
-        public SyncWindow Window => new SyncWindow(options.Window);
-        public SyncLogs Logs => new SyncLogs(options.Logs);
-        public SyncTimeouts Timeouts => new SyncTimeouts(options.Timeouts);
+        public SyncCookieJar Cookies => new SyncCookieJar(_options.Cookies);
+        public SyncWindow Window => new SyncWindow(_options.Window);
+        public SyncLogs Logs => new SyncLogs(_options.Logs);
+        public SyncTimeouts Timeouts => new SyncTimeouts(_options.Timeouts);
 
     }
 }
