@@ -19,10 +19,10 @@ namespace Zu.AsyncWebDriver.Remote
 
         public TimeSpan GetPageLoad() => _timeouts.GetPageLoad().GetAwaiter().GetResult();
 
-        public void SetAsynchronousJavaScript(TimeSpan time) => _timeouts.SetAsynchronousJavaScript(time).Wait();
+        public void SetAsynchronousJavaScript(TimeSpan time) => _timeouts.SetAsynchronousJavaScript(time).GetAwaiter().GetResult();
 
-        public void SetImplicitWait(TimeSpan implicitWait) => _timeouts.SetImplicitWait(implicitWait).Wait();
+        public void SetImplicitWait(TimeSpan implicitWait) => _timeouts.SetImplicitWait(implicitWait).GetAwaiter().GetResult();
 
-        public void SetPageLoad(TimeSpan time) => _timeouts.SetPageLoad(time).Wait();
+        public void SetPageLoad(TimeSpan time) => _timeouts.SetPageLoad(time).GetAwaiter().GetResult();
     }
 }

@@ -15,13 +15,13 @@ namespace Zu.AsyncWebDriver.Remote
 
         public void Back()
         {
-            _navigation.Back().Wait();
+            _navigation.Back().GetAwaiter().GetResult();
             Thread.Sleep(50);
         }
 
         public void GoToUrl(string url)
         {
-            _navigation.GoToUrl(url).Wait();
+            _navigation.GoToUrl(url).GetAwaiter().GetResult();
             Thread.Sleep(200);
         }
 
@@ -29,19 +29,19 @@ namespace Zu.AsyncWebDriver.Remote
         {
             if (url == null)
                 throw new ArgumentNullException(nameof(url));
-            _navigation.GoToUrl(url).Wait();
+            _navigation.GoToUrl(url).GetAwaiter().GetResult();
             Thread.Sleep(50);
         }
 
         public void Forward()
         {
-            _navigation.Forward().Wait();
+            _navigation.Forward().GetAwaiter().GetResult();
             Thread.Sleep(50);
         }
 
         public void Refresh()
         {
-            _navigation.Refresh().Wait();
+            _navigation.Refresh().GetAwaiter().GetResult();
             Thread.Sleep(50);
         }
     }

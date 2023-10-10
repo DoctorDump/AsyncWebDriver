@@ -47,13 +47,13 @@ namespace Zu.AsyncWebDriver.Remote
 
         public WebPoint GetLocationOnScreenOnceScrolledIntoView() => AsyncElement.LocationOnScreenOnceScrolledIntoView().GetAwaiter().GetResult();
 
-        public void Clear() => AsyncElement.Clear().Wait();
+        public void Clear() => AsyncElement.Clear().GetAwaiter().GetResult();
 
-        public void SendKeys(string text) => AsyncElement.SendKeys(text).Wait();
+        public void SendKeys(string text) => AsyncElement.SendKeys(text).GetAwaiter().GetResult();
 
-        public void Submit() => AsyncElement.Submit().Wait();
+        public void Submit() => AsyncElement.Submit().GetAwaiter().GetResult();
 
-        public void Click() => AsyncElement.Click().Wait();
+        public void Click() => AsyncElement.Click().GetAwaiter().GetResult();
 
         public string GetAttribute(string attributeName) => AsyncElement.GetAttribute(attributeName).GetAwaiter().GetResult();
 

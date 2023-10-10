@@ -12,10 +12,10 @@ namespace Zu.AsyncWebDriver.Remote
             _keyboard = keyboard;
         }
 
-        public void PressKey(string keyToPress) => _keyboard.PressKey(keyToPress).Wait();
+        public void PressKey(string keyToPress) => _keyboard.PressKey(keyToPress).GetAwaiter().GetResult();
 
-        public void SendKeys(string keySequence) => _keyboard.SendKeys(keySequence).Wait();
+        public void SendKeys(string keySequence) => _keyboard.SendKeys(keySequence).GetAwaiter().GetResult();
 
-        public void ReleaseKey(string keyToRelease) => _keyboard.ReleaseKey(keyToRelease).Wait();
+        public void ReleaseKey(string keyToRelease) => _keyboard.ReleaseKey(keyToRelease).GetAwaiter().GetResult();
     }
 }

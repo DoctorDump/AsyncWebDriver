@@ -14,15 +14,15 @@ namespace Zu.AsyncWebDriver.Remote
             _cookies = cookies;
         }
 
-        public void AddCookie(Cookie cookie) => _cookies.AddCookie(cookie).Wait();
+        public void AddCookie(Cookie cookie) => _cookies.AddCookie(cookie).GetAwaiter().GetResult();
 
         public ReadOnlyCollection<Cookie> AllCookies() => _cookies.AllCookies().GetAwaiter().GetResult();
 
-        public void DeleteAllCookies() => _cookies.DeleteAllCookies().Wait();
+        public void DeleteAllCookies() => _cookies.DeleteAllCookies().GetAwaiter().GetResult();
 
-        public void DeleteCookie(Cookie cookie) => _cookies.DeleteCookie(cookie).Wait();
+        public void DeleteCookie(Cookie cookie) => _cookies.DeleteCookie(cookie).GetAwaiter().GetResult();
 
-        public void DeleteCookieNamed(string name) => _cookies.DeleteCookieNamed(name).Wait();
+        public void DeleteCookieNamed(string name) => _cookies.DeleteCookieNamed(name).GetAwaiter().GetResult();
 
         public Cookie GetCookieNamed(string name) => _cookies.GetCookieNamed(name).GetAwaiter().GetResult();
     }

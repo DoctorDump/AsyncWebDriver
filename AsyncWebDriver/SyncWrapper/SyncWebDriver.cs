@@ -18,15 +18,15 @@ namespace Zu.AsyncWebDriver.Remote
 
         public void Close() => AsyncDriver.CloseSync();
 
-        public void Open() => AsyncDriver.Open().Wait();
+        public void Open() => AsyncDriver.Open().GetAwaiter().GetResult();
 
         public string Context => GetContext();
 
         public string GetContext() => AsyncDriver.GetContext().GetAwaiter().GetResult();
 
-        public void SetContextChrome() => AsyncDriver.SetContextChrome().Wait();
+        public void SetContextChrome() => AsyncDriver.SetContextChrome().GetAwaiter().GetResult();
 
-        public void SetContextContent() => AsyncDriver.SetContextContent().Wait();
+        public void SetContextContent() => AsyncDriver.SetContextContent().GetAwaiter().GetResult();
 
         public string CurrentWindowHandle => GetCurrentWindowHandle();
 
@@ -83,9 +83,9 @@ namespace Zu.AsyncWebDriver.Remote
             }
         }
 
-        public void ClickElement(string elementId) => AsyncDriver.ClickElement(elementId).Wait();
+        public void ClickElement(string elementId) => AsyncDriver.ClickElement(elementId).GetAwaiter().GetResult();
 
-        public void ClearElement(string elementId) => AsyncDriver.ClearElement(elementId).Wait();
+        public void ClearElement(string elementId) => AsyncDriver.ClearElement(elementId).GetAwaiter().GetResult();
 
         public SyncWebElement FindElement(By by) => AsyncDriver.FindElement(by).GetSyncResult();
 
@@ -171,7 +171,7 @@ namespace Zu.AsyncWebDriver.Remote
         public SyncMouse Mouse => new SyncMouse(AsyncDriver.Mouse);
         public string PageSource() => AsyncDriver.PageSource().GetAwaiter().GetResult();
 
-        public void Quit() => AsyncDriver.Quit().Wait();
+        public void Quit() => AsyncDriver.Quit().GetAwaiter().GetResult();
 
         public SyncRemoteTargetLocator SwitchTo() => new SyncRemoteTargetLocator(AsyncDriver.SwitchTo());
         public string Title() => AsyncDriver.Title().GetAwaiter().GetResult();
@@ -206,8 +206,8 @@ namespace Zu.AsyncWebDriver.Remote
         //}
         public bool IsActionExecutor() => AsyncDriver.IsActionExecutor().GetAwaiter().GetResult();
 
-        public void PerformActions(IList<ActionSequence> actionSequenceList) => AsyncDriver.PerformActions(actionSequenceList).Wait();
+        public void PerformActions(IList<ActionSequence> actionSequenceList) => AsyncDriver.PerformActions(actionSequenceList).GetAwaiter().GetResult();
 
-        public void ResetInputState() => AsyncDriver.ResetInputState().Wait();
+        public void ResetInputState() => AsyncDriver.ResetInputState().GetAwaiter().GetResult();
     }
 }
