@@ -4,6 +4,7 @@ using System.Linq;
 using System.Collections.ObjectModel;
 using Zu.WebBrowser.BasicTypes;
 using System.Collections;
+using System.Threading;
 
 namespace Zu.AsyncWebDriver.Remote
 {
@@ -18,7 +19,7 @@ namespace Zu.AsyncWebDriver.Remote
 
         public void Close() => AsyncDriver.CloseSync();
 
-        public void Open() => AsyncDriver.Open().GetAwaiter().GetResult();
+        public void Open(CancellationToken ct) => AsyncDriver.Open(ct).GetAwaiter().GetResult();
 
         public string Context => GetContext();
 
